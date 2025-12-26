@@ -415,13 +415,20 @@
                                 <input type="date" id="prefDate" name="prefDate" required class="date-input-hidden">
                                 <div class="selected-date-display" id="selectedDateDisplay"></div>
                             </div>
-                            <div class="form-group">
-                                <label for="prefTime">Preferred Time <span class="required">*</span></label>
-                                <select id="prefTime" name="prefTime" required>
-                                    <option value="">Select preferred time</option>
-                                    <option value="Morning (08:00-12:00)">Morning (08:00-12:00)</option>
-                                    <option value="Afternoon (12:00-17:00)">Afternoon (12:00-17:00)</option>
-                                </select>
+                            <div class="form-group full-width">
+                                <label>Select Time Slot <span class="required">*</span></label>
+                                <div class="time-slots-container" id="timeSlotsContainer">
+                                    <div class="time-slots-placeholder">
+                                        <i class="fas fa-calendar-day"></i>
+                                        <p>Please select a date first to see available time slots</p>
+                                    </div>
+                                </div>
+                                <input type="hidden" id="prefTime" name="prefTime" required>
+                                <div class="slots-legend">
+                                    <span class="legend-item"><span class="legend-dot available"></span> Available</span>
+                                    <span class="legend-item"><span class="legend-dot selected"></span> Selected</span>
+                                    <span class="legend-item"><span class="legend-dot booked"></span> Booked</span>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label for="prefDoctor">Preferred Doctor</label>

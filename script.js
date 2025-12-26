@@ -541,6 +541,7 @@ function initQuickDateButtons() {
     const quickDateButtons = document.querySelectorAll('.quick-date-btn');
     const prefDateInput = document.getElementById('prefDate');
     const selectedDateDisplay = document.getElementById('selectedDateDisplay');
+    const timeSlotsContainer = document.getElementById('timeSlotsContainer');
 
     if (!quickDateButtons.length || !prefDateInput) return;
 
@@ -586,6 +587,9 @@ function initQuickDateButtons() {
 
                 // Update the display
                 updateDateDisplay(targetDate, selectedDateDisplay);
+
+                // Generate time slots for this date
+                generateTimeSlots(targetDate, timeSlotsContainer);
             }
         });
     });
@@ -604,6 +608,9 @@ function initQuickDateButtons() {
 
             updateDateDisplay(selectedDate, selectedDateDisplay);
 
+            // Generate time slots for this date
+            generateTimeSlots(selectedDate, timeSlotsContainer);
+
             // Update active button state
             quickDateButtons.forEach(btn => {
                 if (btn.getAttribute('data-days') === 'custom') {
@@ -615,6 +622,168 @@ function initQuickDateButtons() {
         }
     });
 }
+
+/**
+ * Generate Time Slots for Selected Date
+ */
+function generateTimeSlots(date, container) {
+    if (!container) return;
+
+    const dayOfWeek = date.getDay();
+    const isSaturday = dayOfWeek === 6;
+
+    // Define time slots
+    const morningSlots = [
+        { time: '08:00', display: '8:00 AM' },
+        { time: '08:30', display: '8:30 AM' },
+        { time: '09:00', display: '9:00 AM' },
+        { time: '09:30', display: '9:30 AM' },
+        { time: '10:00', display: '10:00 AM' },
+        { time: '10:30', display: '10:30 AM' },
+        { time: '11:00', display: '11:00 AM' },
+        { time: '11:30', display: '11:30 AM' }
+    ];
+
+    const afternoonSlots = [
+        { time: '12:00', display: '12:00 PM' },
+        { time: '12:30', display: '12:30 PM' },
+        { time: '13:00', display: '1:00 PM' },
+        { time: '13:30', display: '1:30 PM' },
+        { time: '14:00', display: '2:00 PM' },
+        { time: '14:30', display: '2:30 PM' },
+        { time: '15:00', display: '3:00 PM' },
+        { time: '15:30', display: '3:30 PM' },
+        { time: '16:00', display: '4:00 PM' },
+        { time: '16:30', display: '4:30 PM' }
+    ];
+
+    // Simulate some booked slots (random for demo)
+    const bookedSlots = generateRandomBookedSlots(date);
+
+    // Calculate available slots
+    const totalMorning = morningSlots.length;
+    const bookedMorning = morningSlots.filter(s => bookedSlots.includes(s.time)).length;
+    const availableMorning = totalMorning - bookedMorning;
+
+    let totalAfternoon = 0;
+    let bookedAfternoon = 0;
+    let availableAfternoon = 0;
+
+    if (!isSaturday) {
+        totalAfternoon = afternoonSlots.length;
+        bookedAfternoon = afternoonSlots.filter(s => bookedSlots.includes(s.time)).length;
+        availableAfternoon = totalAfternoon - bookedAfternoon;
+    }
+
+    const totalAvailable = availableMorning + availableAfternoon;
+
+    // Build HTML
+    let html = `
+        <div class="time-slots-header">
+            <h4><i class="fas fa-clock"></i> Available Time Slots</h4>
+            <span class="slots-available-count">${totalAvailable} slots available</span>
+        </div>
+
+        <div class="time-period-section">
+            <div class="time-period-title"><i class="fas fa-sun"></i> Morning (8:00 AM - 12:00 PM)</div>
+            <div class="time-slots-grid">
+    `;
+
+    morningSlots.forEach(slot => {
+        const isBooked = bookedSlots.includes(slot.time);
+        html += `
+            <div class="time-slot ${isBooked ? 'booked' : ''}" data-time="${slot.time}" ${isBooked ? '' : 'onclick="selectTimeSlot(this)"'}>
+                <span class="slot-time">${slot.display}</span>
+            </div>
+        `;
+    });
+
+    html += `
+            </div>
+        </div>
+    `;
+
+    // Add afternoon slots (only if not Saturday)
+    if (!isSaturday) {
+        html += `
+            <div class="time-period-section">
+                <div class="time-period-title"><i class="fas fa-cloud-sun"></i> Afternoon (12:00 PM - 5:00 PM)</div>
+                <div class="time-slots-grid">
+        `;
+
+        afternoonSlots.forEach(slot => {
+            const isBooked = bookedSlots.includes(slot.time);
+            html += `
+                <div class="time-slot ${isBooked ? 'booked' : ''}" data-time="${slot.time}" ${isBooked ? '' : 'onclick="selectTimeSlot(this)"'}>
+                    <span class="slot-time">${slot.display}</span>
+                </div>
+            `;
+        });
+
+        html += `
+                </div>
+            </div>
+        `;
+    } else {
+        html += `
+            <div class="time-period-section">
+                <div class="time-period-title" style="color: var(--text-gray);"><i class="fas fa-info-circle"></i> Saturday Hours: 8:00 AM - 1:00 PM only</div>
+            </div>
+        `;
+    }
+
+    container.innerHTML = html;
+
+    // Clear the hidden time input
+    document.getElementById('prefTime').value = '';
+}
+
+/**
+ * Generate Random Booked Slots (for demo purposes)
+ */
+function generateRandomBookedSlots(date) {
+    const booked = [];
+    const dateStr = date.toISOString().split('T')[0];
+
+    // Use date string to generate consistent "random" bookings
+    const seed = dateStr.split('-').reduce((a, b) => a + parseInt(b), 0);
+
+    const allSlots = ['08:00', '08:30', '09:00', '09:30', '10:00', '10:30', '11:00', '11:30',
+        '12:00', '12:30', '13:00', '13:30', '14:00', '14:30', '15:00', '15:30', '16:00', '16:30'];
+
+    // Book 3-6 random slots based on date
+    const numBooked = 3 + (seed % 4);
+
+    for (let i = 0; i < numBooked; i++) {
+        const index = (seed * (i + 1)) % allSlots.length;
+        if (!booked.includes(allSlots[index])) {
+            booked.push(allSlots[index]);
+        }
+    }
+
+    return booked;
+}
+
+/**
+ * Select Time Slot (global function)
+ */
+window.selectTimeSlot = function(element) {
+    // Remove selection from all slots
+    document.querySelectorAll('.time-slot').forEach(slot => {
+        slot.classList.remove('selected');
+    });
+
+    // Add selection to clicked slot
+    element.classList.add('selected');
+
+    // Update hidden input
+    const time = element.getAttribute('data-time');
+    const displayTime = element.querySelector('.slot-time').textContent;
+    document.getElementById('prefTime').value = time;
+
+    // Show confirmation notification
+    showNotification(`Time slot selected: ${displayTime}`, 'success');
+};
 
 /**
  * Update Date Display

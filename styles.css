@@ -929,6 +929,214 @@ section {
     margin-top: 2px;
 }
 
+/* Time Slots Booking */
+.time-slots-container {
+    background: var(--off-white);
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    min-height: 200px;
+}
+
+.time-slots-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 160px;
+    color: var(--text-gray);
+    text-align: center;
+}
+
+.time-slots-placeholder i {
+    font-size: 48px;
+    color: var(--border-color);
+    margin-bottom: 16px;
+}
+
+.time-slots-placeholder p {
+    font-size: 14px;
+}
+
+.time-slots-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.time-slots-header h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.time-slots-header h4 i {
+    color: var(--primary-purple);
+}
+
+.slots-available-count {
+    font-size: 12px;
+    color: var(--success);
+    font-weight: 500;
+}
+
+.time-slots-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+}
+
+.time-slot {
+    padding: 12px 8px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--white);
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+}
+
+.time-slot:hover:not(.booked) {
+    border-color: var(--primary-blue);
+    background: var(--light-blue);
+}
+
+.time-slot.selected {
+    border-color: var(--primary-blue);
+    background: var(--gradient-primary);
+    color: var(--white);
+    box-shadow: 0 4px 12px rgba(43, 78, 163, 0.3);
+}
+
+.time-slot.booked {
+    background: #f3f4f6;
+    border-color: #e5e7eb;
+    color: #9ca3af;
+    cursor: not-allowed;
+    text-decoration: line-through;
+}
+
+.time-slot .slot-time {
+    font-size: 14px;
+    font-weight: 600;
+    display: block;
+}
+
+.time-slot .slot-period {
+    font-size: 11px;
+    opacity: 0.8;
+    margin-top: 2px;
+}
+
+.time-slot.booked::after {
+    content: 'Booked';
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #ef4444;
+    color: white;
+    font-size: 9px;
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.slots-legend {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border-color);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--text-gray);
+}
+
+.legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.legend-dot.available {
+    background: var(--white);
+    border: 2px solid var(--border-color);
+}
+
+.legend-dot.selected {
+    background: var(--gradient-primary);
+}
+
+.legend-dot.booked {
+    background: #e5e7eb;
+}
+
+.time-period-section {
+    margin-bottom: 20px;
+}
+
+.time-period-section:last-child {
+    margin-bottom: 0;
+}
+
+.time-period-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--primary-purple);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.time-period-title i {
+    font-size: 14px;
+}
+
+/* Selected Slot Display */
+.selected-slot-display {
+    margin-top: 16px;
+    padding: 16px;
+    background: linear-gradient(135deg, #dcfce7 0%, #d1fae5 100%);
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--success);
+    display: none;
+}
+
+.selected-slot-display.visible {
+    display: block;
+}
+
+.selected-slot-display .slot-label {
+    font-size: 12px;
+    color: #166534;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.selected-slot-display .slot-value {
+    font-size: 18px;
+    font-weight: 600;
+    color: #166534;
+}
+
 /* File Upload */
 .file-upload {
     position: relative;
