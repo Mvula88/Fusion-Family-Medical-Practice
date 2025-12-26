@@ -1715,6 +1715,8 @@ section {
 }
 
 /* Responsive Styles */
+
+/* Large Tablets and Small Desktops */
 @media (max-width: 1024px) {
     .about-grid,
     .antenatal-grid,
@@ -1725,6 +1727,8 @@ section {
 
     .about-image {
         order: -1;
+        max-width: 600px;
+        margin: 0 auto;
     }
 
     .about-badge {
@@ -1734,20 +1738,55 @@ section {
 
     .footer-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
     }
 }
 
+/* Tablets */
 @media (max-width: 768px) {
+    /* Demo Banner */
     .demo-banner {
         padding: 10px 15px;
     }
 
-    .demo-banner span {
-        font-size: 12px;
+    .demo-banner-content {
+        flex-direction: column;
+        gap: 5px;
     }
 
+    .demo-banner span {
+        font-size: 11px;
+        line-height: 1.4;
+    }
+
+    .demo-banner i {
+        font-size: 16px;
+    }
+
+    /* Navigation */
     .navbar {
-        top: 40px;
+        top: 52px;
+        padding: 0;
+    }
+
+    .navbar.scrolled {
+        top: 0;
+    }
+
+    .nav-container {
+        padding: 8px 15px;
+    }
+
+    .logo img {
+        height: 50px;
     }
 
     .nav-menu {
@@ -1759,13 +1798,25 @@ section {
         background: var(--white);
         flex-direction: column;
         justify-content: center;
-        gap: 20px;
+        align-items: center;
+        gap: 15px;
         transform: translateX(100%);
         transition: var(--transition);
+        z-index: 1000;
+        padding: 20px;
     }
 
     .nav-menu.active {
         transform: translateX(0);
+    }
+
+    .nav-link {
+        font-size: 18px;
+        padding: 12px 24px;
+    }
+
+    .btn-nav {
+        margin-top: 10px;
     }
 
     .nav-toggle {
@@ -1785,24 +1836,212 @@ section {
         transform: rotate(-45deg) translate(6px, -6px);
     }
 
+    /* Hero Section */
     .hero {
-        padding: 140px 20px 60px;
+        padding: 130px 20px 60px;
+        min-height: auto;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+
+    .hero-subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+    }
+
+    .hero-badges {
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 25px;
+    }
+
+    .badge {
+        padding: 10px 20px;
+        font-size: 13px;
+        justify-content: center;
     }
 
     .hero-buttons {
         flex-direction: column;
+        gap: 12px;
     }
 
     .hero-buttons .btn {
         width: 100%;
+        padding: 14px 24px;
     }
 
+    .hero-scroll {
+        display: none;
+    }
+
+    /* Sections */
     section {
-        padding: 60px 0;
+        padding: 50px 0;
     }
 
+    .section-header {
+        margin-bottom: 40px;
+    }
+
+    .section-header h2 {
+        font-size: 1.6rem;
+    }
+
+    .section-header p {
+        font-size: 15px;
+    }
+
+    .section-tag {
+        font-size: 11px;
+        padding: 6px 16px;
+    }
+
+    /* About Section */
+    .about-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .about-content .lead {
+        font-size: 16px;
+    }
+
+    .about-features {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .feature {
+        padding: 14px;
+    }
+
+    .about-badge {
+        padding: 15px;
+    }
+
+    .about-badge .years {
+        font-size: 36px;
+    }
+
+    .about-badge .text {
+        font-size: 10px;
+    }
+
+    /* Services */
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .service-card {
+        padding: 24px 20px;
+    }
+
+    .service-icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 16px;
+    }
+
+    .service-icon i {
+        font-size: 20px;
+    }
+
+    .service-card h3 {
+        font-size: 16px;
+    }
+
+    /* Gallery */
+    .gallery-carousel {
+        gap: 10px;
+        margin: 0 -10px;
+        padding: 0 10px;
+    }
+
+    .carousel-slide img {
+        height: 300px;
+    }
+
+    .slide-caption {
+        font-size: 14px;
+        padding: 20px 15px;
+    }
+
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .carousel-dots {
+        margin-top: 20px;
+    }
+
+    .carousel-dot {
+        width: 10px;
+        height: 10px;
+    }
+
+    /* Antenatal */
+    .antenatal-grid {
+        gap: 30px;
+    }
+
+    .antenatal-image {
+        order: -1;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .antenatal-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .antenatal-services {
+        gap: 10px;
+    }
+
+    .antenatal-item {
+        font-size: 14px;
+    }
+
+    /* Online Consultation */
+    .consultation-cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .consultation-card {
+        padding: 30px 20px;
+    }
+
+    .card-icon {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 16px;
+    }
+
+    .card-icon i {
+        font-size: 24px;
+    }
+
+    .consultation-card h3 {
+        font-size: 18px;
+    }
+
+    .consultation-note {
+        padding: 16px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Appointment Form */
     .form-grid {
         grid-template-columns: 1fr;
+        gap: 16px;
     }
 
     .form-group.full-width {
@@ -1810,35 +2049,220 @@ section {
     }
 
     .form-section {
-        padding: 24px 20px;
+        padding: 20px 16px;
+    }
+
+    .form-section h3 {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .form-group label {
+        font-size: 13px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 12px 14px;
+        font-size: 14px;
+    }
+
+    /* Quick Date Buttons */
+    .quick-date-buttons {
+        gap: 8px;
+    }
+
+    .quick-date-btn {
+        padding: 10px 14px;
+        font-size: 12px;
+        flex: 1 1 calc(50% - 8px);
+        justify-content: center;
+    }
+
+    .selected-date-display {
+        padding: 14px;
+    }
+
+    .selected-date-display .date-value {
+        font-size: 16px;
+    }
+
+    /* Time Slots */
+    .time-slots-container {
+        padding: 16px;
+    }
+
+    .time-slots-header {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+
+    .time-slots-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+
+    .time-slot {
+        padding: 10px 6px;
+    }
+
+    .time-slot .slot-time {
+        font-size: 12px;
+    }
+
+    .time-period-title {
+        font-size: 11px;
+    }
+
+    .slots-legend {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .legend-item {
+        font-size: 11px;
+    }
+
+    /* File Upload */
+    .file-upload-label {
+        padding: 30px 20px;
+    }
+
+    .file-upload-label i {
+        font-size: 32px;
     }
 
     .form-actions {
-        padding: 24px 20px;
+        padding: 20px 16px;
     }
 
-    .about-features {
+    .btn-large {
+        padding: 14px 28px;
+        font-size: 15px;
+    }
+
+    /* Radio & Checkbox */
+    .radio-group,
+    .checkbox-group {
+        gap: 12px;
+    }
+
+    .radio-label,
+    .checkbox-label {
+        font-size: 13px;
+    }
+
+    /* Reviews */
+    .reviews-grid {
         grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .review-card {
+        padding: 20px;
+    }
+
+    .reviewer-avatar {
+        width: 42px;
+        height: 42px;
+        font-size: 14px;
+    }
+
+    .reviewer-info h4 {
+        font-size: 14px;
+    }
+
+    /* Contact */
+    .contact-grid {
+        gap: 40px;
+    }
+
+    .contact-info h2 {
+        font-size: 1.5rem;
+    }
+
+    .contact-details {
+        gap: 20px;
+    }
+
+    .contact-item {
+        gap: 12px;
+    }
+
+    .contact-icon {
+        width: 45px;
+        height: 45px;
+    }
+
+    .contact-icon i {
+        font-size: 18px;
+    }
+
+    .contact-text h4 {
+        font-size: 14px;
+    }
+
+    .contact-text p {
+        font-size: 13px;
+    }
+
+    .contact-map {
+        min-height: 300px;
+        margin: 0 -15px;
+        border-radius: 0;
+    }
+
+    .contact-map iframe {
+        min-height: 300px;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 50px 0 25px;
     }
 
     .footer-grid {
         grid-template-columns: 1fr;
         text-align: center;
+        gap: 30px;
     }
 
     .footer-brand .footer-logo {
         margin: 0 auto 16px;
+        height: 60px;
+    }
+
+    .footer h4 {
+        font-size: 15px;
+        margin-bottom: 15px;
+    }
+
+    .footer-links ul li,
+    .footer-services ul li {
+        margin-bottom: 8px;
     }
 
     .social-links {
         justify-content: center;
     }
 
+    .footer-bottom {
+        padding-top: 20px;
+    }
+
+    .footer-bottom p {
+        font-size: 12px;
+    }
+
+    /* Floating Buttons */
     .whatsapp-float {
         bottom: 20px;
         right: 20px;
         width: 55px;
         height: 55px;
+        font-size: 26px;
     }
 
     .back-to-top {
@@ -1846,37 +2270,229 @@ section {
         bottom: 20px;
         width: 40px;
         height: 40px;
-    }
-
-    .antenatal-image {
-        order: -1;
-    }
-
-    .consultation-cards {
-        grid-template-columns: 1fr;
+        font-size: 16px;
     }
 }
 
+/* Small Phones */
 @media (max-width: 480px) {
     .container {
-        padding: 0 15px;
+        padding: 0 12px;
+    }
+
+    /* Hero */
+    .hero {
+        padding: 120px 15px 50px;
     }
 
     .hero h1 {
-        font-size: 2rem;
+        font-size: 1.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.875rem;
     }
 
     .badge {
-        padding: 10px 16px;
+        padding: 8px 14px;
+        font-size: 11px;
+    }
+
+    /* Section Headers */
+    .section-header h2 {
+        font-size: 1.4rem;
+    }
+
+    .section-header p {
+        font-size: 14px;
+    }
+
+    /* Services */
+    .service-card {
+        padding: 20px 16px;
+    }
+
+    .service-card h3 {
+        font-size: 15px;
+    }
+
+    .service-card p {
+        font-size: 13px;
+    }
+
+    /* Gallery */
+    .carousel-slide img {
+        height: 220px;
+    }
+
+    .slide-caption {
+        font-size: 12px;
+        padding: 15px 12px;
+    }
+
+    .carousel-btn {
+        width: 35px;
+        height: 35px;
         font-size: 12px;
     }
 
-    .services-grid {
-        grid-template-columns: 1fr;
+    /* Quick Date Buttons */
+    .quick-date-btn {
+        padding: 8px 10px;
+        font-size: 11px;
+        flex: 1 1 calc(50% - 6px);
     }
 
-    .reviews-grid {
-        grid-template-columns: 1fr;
+    /* Time Slots */
+    .time-slots-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .time-slot {
+        padding: 10px 4px;
+    }
+
+    .time-slot .slot-time {
+        font-size: 11px;
+    }
+
+    .time-slot.booked::after {
+        font-size: 8px;
+        padding: 2px 4px;
+        top: -6px;
+        right: -4px;
+    }
+
+    /* Form */
+    .form-section {
+        padding: 16px 12px;
+    }
+
+    .form-section h3 {
+        font-size: 14px;
+        gap: 8px;
+    }
+
+    .form-section h3 i {
+        font-size: 16px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 10px 12px;
+        font-size: 14px;
+        border-radius: 8px;
+    }
+
+    .form-actions {
+        padding: 16px 12px;
+    }
+
+    .btn-large {
+        padding: 12px 20px;
+        font-size: 14px;
+        width: 100%;
+    }
+
+    /* Reviews */
+    .google-rating {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .stars i {
+        font-size: 18px;
+    }
+
+    /* Contact */
+    .contact-info h2 {
+        font-size: 1.3rem;
+    }
+
+    .contact-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* About Badge */
+    .about-badge {
+        padding: 12px;
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .about-badge .years {
+        font-size: 30px;
+    }
+
+    .about-badge .text {
+        font-size: 9px;
+    }
+
+    /* Floating Buttons */
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        bottom: 15px;
+        right: 15px;
+    }
+
+    .back-to-top {
+        width: 36px;
+        height: 36px;
+        font-size: 14px;
+        right: 75px;
+        bottom: 15px;
+    }
+}
+
+/* Extra Small Phones */
+@media (max-width: 360px) {
+    .hero h1 {
+        font-size: 1.3rem;
+    }
+
+    .quick-date-btn {
+        flex: 1 1 100%;
+    }
+
+    .time-slots-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .carousel-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 10px;
+    }
+
+    .carousel-slide img {
+        height: 180px;
+    }
+}
+
+/* Landscape orientation on phones */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        padding: 100px 20px 40px;
+    }
+
+    .hero-badges {
+        flex-direction: row;
+    }
+
+    .nav-menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 80px 20px 20px;
+    }
+
+    .nav-link {
+        font-size: 14px;
+        padding: 8px 16px;
     }
 }
 
