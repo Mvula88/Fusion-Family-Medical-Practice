@@ -267,6 +267,20 @@ ul {
     background: radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.3) 100%);
 }
 
+/* Hero Bottom Wave Shape */
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 150px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23f9fafb' fill-opacity='1' d='M0,160L48,170.7C96,181,192,203,288,192C384,181,480,139,576,128C672,117,768,139,864,165.3C960,192,1056,224,1152,218.7C1248,213,1344,171,1392,149.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E") no-repeat bottom center;
+    background-size: cover;
+    z-index: 2;
+    pointer-events: none;
+}
+
 .hero-content {
     position: relative;
     z-index: 1;
@@ -1878,6 +1892,10 @@ section {
         display: none;
     }
 
+    .hero::after {
+        height: 80px;
+    }
+
     /* Sections */
     section {
         padding: 50px 0;
@@ -2296,6 +2314,10 @@ section {
     .badge {
         padding: 8px 14px;
         font-size: 11px;
+    }
+
+    .hero::after {
+        height: 60px;
     }
 
     /* Section Headers */
