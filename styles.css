@@ -244,7 +244,7 @@ ul {
     align-items: center;
     justify-content: center;
     background: url('assets/images/clinic-building.jpg') center center / cover no-repeat;
-    padding: 160px 20px 80px;
+    padding: 160px 20px 180px;
     overflow: hidden;
 }
 
@@ -1852,7 +1852,7 @@ section {
 
     /* Hero Section */
     .hero {
-        padding: 130px 20px 60px;
+        padding: 130px 20px 120px;
         min-height: auto;
     }
 
@@ -2300,7 +2300,7 @@ section {
 
     /* Hero */
     .hero {
-        padding: 120px 15px 50px;
+        padding: 120px 15px 100px;
     }
 
     .hero h1 {
