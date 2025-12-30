@@ -744,6 +744,239 @@ section {
     padding-bottom: 80px;
 }
 
+/* Why Choose Us Section */
+.why-choose-us {
+    padding: 80px 0;
+    background: var(--white);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.feature-card {
+    text-align: center;
+    padding: 40px 30px;
+    background: var(--off-white);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    border: 1px solid transparent;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-purple);
+    background: var(--white);
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.feature-icon i {
+    font-size: 32px;
+    color: var(--white);
+}
+
+.feature-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--text-dark);
+}
+
+.feature-card p {
+    color: var(--text-gray);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* Meet Your Doctor Section */
+.meet-doctor {
+    padding: 80px 0;
+    background: var(--off-white);
+}
+
+.doctor-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.doctor-image {
+    position: relative;
+}
+
+.doctor-image img {
+    width: 100%;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-xl);
+}
+
+.doctor-content .section-tag {
+    margin-bottom: 10px;
+}
+
+.doctor-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+.doctor-title {
+    font-size: 18px;
+    color: var(--primary-purple);
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.doctor-bio {
+    color: var(--text-gray);
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+.doctor-credentials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: 24px 0;
+}
+
+.credential {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: var(--white);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.credential i {
+    color: var(--primary-purple);
+    font-size: 18px;
+}
+
+.credential span {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+/* Slender Wonder Section */
+.slender-wonder {
+    padding: 80px 0;
+    background: var(--white);
+}
+
+.slender-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.slender-content .section-tag {
+    margin-bottom: 10px;
+}
+
+.slender-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: var(--text-dark);
+    margin-bottom: 16px;
+}
+
+.slender-content .lead {
+    font-size: 18px;
+    color: var(--text-dark);
+    margin-bottom: 16px;
+}
+
+.slender-content p {
+    color: var(--text-gray);
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.slender-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+}
+
+.slender-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    color: var(--text-dark);
+    font-size: 15px;
+}
+
+.slender-list li i {
+    color: var(--success);
+    font-size: 18px;
+}
+
+.slender-content .btn {
+    margin-right: 12px;
+    margin-bottom: 12px;
+}
+
+.slender-image img {
+    width: 100%;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-xl);
+}
+
+/* Quick Stats Section */
+.quick-stats {
+    padding: 60px 0;
+    background: var(--gradient-primary);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    text-align: center;
+}
+
+.stat-item {
+    padding: 20px;
+}
+
+.stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.9);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
 /* How It Works Section */
 .how-it-works {
     padding: 80px 0;
@@ -2002,6 +2235,31 @@ section {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .doctor-grid,
+    .slender-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .doctor-image {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .slender-image {
+        order: -1;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .section-header h2 {
         font-size: 2rem;
     }
@@ -2265,6 +2523,63 @@ section {
 
     .step-card {
         padding: 25px 20px;
+    }
+
+    /* Features / Why Choose Us */
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .feature-card {
+        padding: 30px 20px;
+    }
+
+    .feature-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .feature-icon i {
+        font-size: 24px;
+    }
+
+    /* Meet Doctor */
+    .doctor-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .doctor-credentials {
+        flex-direction: column;
+    }
+
+    .credential {
+        justify-content: center;
+    }
+
+    /* Slender Wonder */
+    .slender-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .slender-content .btn {
+        display: block;
+        text-align: center;
+        margin-right: 0;
+    }
+
+    /* Quick Stats */
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .stat-number {
+        font-size: 2.2rem;
+    }
+
+    .stat-label {
+        font-size: 12px;
     }
 
     /* Gallery */
