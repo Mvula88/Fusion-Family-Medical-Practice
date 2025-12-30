@@ -243,7 +243,7 @@ ul {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url('assets/images/clinic-building.jpg') center center / cover no-repeat;
+    background: url('assets/images/gallery/dr-office.webp') center center / cover no-repeat;
     padding: 160px 20px 180px;
     overflow: hidden;
 }
@@ -325,6 +325,35 @@ ul {
 
 .badge i {
     color: #fbbf24;
+}
+
+/* Hero Trust Cues */
+.hero-trust-cues {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    color: var(--white);
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.hero-trust-cues span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.hero-trust-cues i {
+    color: #10b981;
+    font-size: 16px;
+}
+
+.hero-trust-cues .divider {
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 300;
 }
 
 .hero-buttons {
@@ -2502,6 +2531,17 @@ section {
         padding: 10px 20px;
         font-size: 13px;
         justify-content: center;
+    }
+
+    .hero-trust-cues {
+        flex-direction: column;
+        gap: 8px;
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+
+    .hero-trust-cues .divider {
+        display: none;
     }
 
     .hero-buttons {
