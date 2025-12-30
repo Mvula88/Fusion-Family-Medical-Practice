@@ -676,6 +676,35 @@ section {
     margin: 0;
 }
 
+/* Page Header (for sub-pages) */
+.page-header {
+    background: var(--gradient-primary);
+    padding: 140px 0 60px;
+    text-align: center;
+    margin-top: 70px;
+}
+
+.page-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 16px;
+}
+
+.page-header p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Products page specific */
+.products-page {
+    padding-top: 60px;
+    padding-bottom: 80px;
+}
+
 /* Gallery Section */
 .gallery {
     background: linear-gradient(135deg, #1e3a8a 0%, #312e81 100%);
@@ -2125,6 +2154,21 @@ section {
     .products-note {
         flex-direction: column;
         text-align: center;
+    }
+
+    /* Page Header */
+    .page-header {
+        padding: 120px 0 40px;
+        margin-top: 60px;
+    }
+
+    .page-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .page-header p {
+        font-size: 1rem;
+        padding: 0 20px;
     }
 
     /* Gallery */
