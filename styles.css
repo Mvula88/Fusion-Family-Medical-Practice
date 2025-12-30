@@ -3376,6 +3376,174 @@ section {
 }
 
 /* ===================================
+   Why Choose Fusion Section
+   =================================== */
+.why-choose-fusion {
+    padding: 80px 0;
+    background: var(--white);
+}
+
+.trust-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.trust-content .section-tag {
+    margin-bottom: 15px;
+}
+
+.trust-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: var(--text-dark);
+}
+
+.trust-points {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.trust-points li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 18px;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.trust-points li i {
+    color: var(--success);
+    font-size: 22px;
+    flex-shrink: 0;
+}
+
+.quote-card {
+    background: var(--gradient-primary);
+    padding: 40px;
+    border-radius: var(--border-radius-lg);
+    color: var(--white);
+    position: relative;
+}
+
+.quote-icon {
+    font-size: 40px;
+    opacity: 0.3;
+    position: absolute;
+    top: 20px;
+    left: 30px;
+}
+
+.quote-text {
+    font-size: 18px;
+    line-height: 1.8;
+    font-style: italic;
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 1;
+}
+
+.quote-author {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.quote-author img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.author-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.author-info strong {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.author-info span {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* Why Choose Fusion Responsive */
+@media (max-width: 768px) {
+    .why-choose-fusion {
+        padding: 60px 0;
+    }
+
+    .trust-section {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .trust-content h2 {
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+    }
+
+    .trust-points li {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    .trust-points li i {
+        font-size: 20px;
+    }
+
+    .quote-card {
+        padding: 30px;
+    }
+
+    .quote-text {
+        font-size: 16px;
+    }
+
+    .quote-icon {
+        font-size: 30px;
+        top: 15px;
+        left: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .trust-points li {
+        font-size: 15px;
+    }
+
+    .quote-card {
+        padding: 25px;
+    }
+
+    .quote-text {
+        font-size: 15px;
+    }
+
+    .quote-author img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .author-info strong {
+        font-size: 14px;
+    }
+
+    .author-info span {
+        font-size: 12px;
+    }
+}
+
+/* ===================================
    CTA Strip Section
    =================================== */
 .cta-strip {
