@@ -708,6 +708,90 @@ section {
     padding-bottom: 80px;
 }
 
+/* Services page specific */
+.services-page {
+    padding-top: 60px;
+    padding-bottom: 80px;
+}
+
+/* About page specific */
+.about-page {
+    padding-top: 60px;
+    padding-bottom: 80px;
+}
+
+/* Gallery page specific */
+.gallery-page {
+    padding-top: 60px;
+    padding-bottom: 80px;
+    background: var(--off-white);
+}
+
+.gallery-page .gallery-carousel {
+    background: transparent;
+}
+
+/* Online consultation page specific */
+.online-consultation-page {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background: var(--off-white);
+}
+
+/* Contact page specific */
+.contact-page {
+    padding-top: 60px;
+    padding-bottom: 80px;
+}
+
+/* How It Works Section */
+.how-it-works {
+    padding: 80px 0;
+    background: var(--white);
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.step-card {
+    text-align: center;
+    padding: 30px 20px;
+    background: var(--off-white);
+    border-radius: var(--border-radius);
+    position: relative;
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    background: var(--gradient-primary);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 auto 20px;
+}
+
+.step-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--text-dark);
+}
+
+.step-card p {
+    color: var(--text-gray);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
 /* Gallery Section */
 .gallery {
     background: linear-gradient(135deg, #1e3a8a 0%, #312e81 100%);
@@ -1914,6 +1998,10 @@ section {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .section-header h2 {
         font-size: 2rem;
     }
@@ -2167,6 +2255,16 @@ section {
     .page-header p {
         font-size: 1rem;
         padding: 0 20px;
+    }
+
+    /* How It Works */
+    .steps-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .step-card {
+        padding: 25px 20px;
     }
 
     /* Gallery */
