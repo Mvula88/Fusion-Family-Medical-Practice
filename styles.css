@@ -2283,6 +2283,142 @@ section {
     color: var(--accent-pink);
 }
 
+/* Minimal Footer */
+.footer-minimal {
+    background: linear-gradient(135deg, #1e3a8a 0%, #312e81 100%);
+    color: var(--white);
+    padding: 60px 0 30px;
+}
+
+.footer-content {
+    text-align: center;
+}
+
+.footer-brand-minimal {
+    margin-bottom: 40px;
+}
+
+.footer-brand-minimal .footer-logo {
+    height: 80px;
+    margin: 0 auto 15px;
+    filter: brightness(0) invert(1);
+}
+
+.footer-brand-minimal .tagline {
+    font-size: 18px;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+.footer-info-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    text-align: left;
+    padding: 40px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-info-item h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-info-item h4 i {
+    color: var(--accent-pink);
+    font-size: 16px;
+}
+
+.footer-info-item p {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-bottom: 5px;
+    line-height: 1.6;
+}
+
+.footer-info-item a {
+    color: var(--white);
+    opacity: 0.8;
+    transition: var(--transition);
+}
+
+.footer-info-item a:hover {
+    opacity: 1;
+    color: var(--accent-pink);
+}
+
+.social-links-minimal {
+    display: flex;
+    gap: 12px;
+}
+
+.social-links-minimal a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: var(--white);
+    font-size: 16px;
+    transition: var(--transition);
+}
+
+.social-links-minimal a:hover {
+    background: var(--accent-pink);
+    transform: translateY(-3px);
+}
+
+.footer-bottom-minimal {
+    padding-top: 25px;
+    text-align: center;
+}
+
+.footer-bottom-minimal p {
+    font-size: 13px;
+    opacity: 0.7;
+}
+
+/* Minimal Footer Responsive */
+@media (max-width: 768px) {
+    .footer-minimal {
+        padding: 50px 0 25px;
+    }
+
+    .footer-info-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        text-align: center;
+    }
+
+    .footer-info-item h4 {
+        justify-content: center;
+    }
+
+    .social-links-minimal {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-info-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .footer-brand-minimal .tagline {
+        font-size: 16px;
+    }
+}
+
 /* WhatsApp Float Button */
 .whatsapp-float {
     position: fixed;
