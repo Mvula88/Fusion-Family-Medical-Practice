@@ -1121,8 +1121,45 @@ function initGalleryGrid() {
     }
 
     // Event listeners
-    nextBtn.addEventListener('click', nextPage);
-    prevBtn.addEventListener('click', prevPage);
+    nextBtn.addEventListener('click', () => {
+        nextPage();
+        resetAutoPlay();
+    });
+    prevBtn.addEventListener('click', () => {
+        prevPage();
+        resetAutoPlay();
+    });
+
+    // Auto-play functionality
+    let autoPlayInterval;
+    const autoPlayDelay = 4000; // 4 seconds
+
+    function startAutoPlay() {
+        autoPlayInterval = setInterval(() => {
+            if (currentPage < totalPages - 1) {
+                currentPage++;
+            } else {
+                currentPage = 0; // Loop back to first page
+            }
+            updateGallery();
+        }, autoPlayDelay);
+    }
+
+    function stopAutoPlay() {
+        clearInterval(autoPlayInterval);
+    }
+
+    function resetAutoPlay() {
+        stopAutoPlay();
+        startAutoPlay();
+    }
+
+    // Pause on hover
+    const galleryContainer = galleryGrid.closest('.gallery-grid-carousel');
+    if (galleryContainer) {
+        galleryContainer.addEventListener('mouseenter', stopAutoPlay);
+        galleryContainer.addEventListener('mouseleave', startAutoPlay);
+    }
 
     // Handle resize
     window.addEventListener('resize', () => {
@@ -1133,10 +1170,12 @@ function initGalleryGrid() {
             currentPage = 0;
             createDots();
             updateGallery();
+            resetAutoPlay();
         }
     });
 
     // Initialize
     createDots();
     updateGallery();
+    startAutoPlay();
 }
