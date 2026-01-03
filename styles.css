@@ -886,6 +886,53 @@ section {
     padding-bottom: 80px;
 }
 
+.products-page .section-title {
+    font-family: 'Arimo', Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 40px;
+    text-align: center;
+    position: relative;
+}
+
+.products-page .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-accent), var(--secondary-accent));
+    border-radius: 2px;
+}
+
+.products-page.products-alt {
+    background: #ffffff;
+}
+
+.products-page .product-image {
+    height: 220px;
+    background: #f8f8f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.products-page .product-image img {
+    object-fit: contain;
+    padding: 10px;
+}
+
+.products-page .product-card h3 {
+    font-size: 16px;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /* Services page specific */
 .services-page {
     padding-top: 60px;
