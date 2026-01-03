@@ -2801,19 +2801,25 @@ section {
         left: 0;
         right: 0;
         bottom: 0;
-        background: var(--white);
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 15px;
         transform: translateX(100%);
-        transition: var(--transition);
+        visibility: hidden;
+        opacity: 0;
+        transition: transform 0.3s ease, visibility 0.3s ease, opacity 0.3s ease;
         z-index: 1000;
         padding: 20px;
     }
 
     .nav-menu.active {
         transform: translateX(0);
+        visibility: visible;
+        opacity: 1;
     }
 
     .nav-link {
@@ -3647,6 +3653,13 @@ section {
         flex-direction: row;
         flex-wrap: wrap;
         padding: 80px 20px 20px;
+        justify-content: center;
+    }
+
+    .nav-menu:not(.active) {
+        transform: translateX(100%);
+        visibility: hidden;
+        opacity: 0;
     }
 
     .nav-link {
