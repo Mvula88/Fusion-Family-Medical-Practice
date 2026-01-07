@@ -1186,6 +1186,109 @@ section {
     box-shadow: var(--shadow-xl);
 }
 
+/* Occupational Health Section */
+.occupational-health {
+    padding: 80px 0;
+    background: var(--background-light);
+}
+
+.occupational-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.occupational-content .section-tag {
+    margin-bottom: 10px;
+}
+
+.occupational-content h2 {
+    font-family: 'Arimo', Arial, Helvetica, sans-serif;
+    font-size: 2.2rem;
+    color: var(--text-dark);
+    margin-bottom: 16px;
+}
+
+.occupational-content .lead {
+    font-size: 18px;
+    color: var(--text-dark);
+    margin-bottom: 16px;
+}
+
+.occupational-content p {
+    color: var(--text-gray);
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.occupational-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+}
+
+.occupational-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    color: var(--text-dark);
+    font-size: 15px;
+}
+
+.occupational-list li i {
+    color: var(--success);
+    font-size: 18px;
+}
+
+.corporate-clients {
+    background: var(--white);
+    padding: 40px;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-lg);
+}
+
+.corporate-clients h4 {
+    font-family: 'Arimo', Arial, Helvetica, sans-serif;
+    font-size: 1.3rem;
+    color: var(--text-dark);
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.client-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.client-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    background: var(--background-light);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.client-item:hover {
+    transform: translateX(8px);
+    background: var(--primary-accent);
+}
+
+.client-item i {
+    font-size: 24px;
+    color: var(--tertiary-accent);
+}
+
+.client-item span {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
 /* Quick Stats Section */
 .quick-stats {
     padding: 60px 0;
@@ -2732,7 +2835,8 @@ section {
     }
 
     .doctor-grid,
-    .slender-grid {
+    .slender-grid,
+    .occupational-grid {
         grid-template-columns: 1fr;
         gap: 40px;
     }
@@ -2746,6 +2850,16 @@ section {
         order: -1;
         max-width: 500px;
         margin: 0 auto;
+    }
+
+    .occupational-image {
+        order: -1;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .corporate-clients {
+        padding: 30px;
     }
 
     .stats-grid {
