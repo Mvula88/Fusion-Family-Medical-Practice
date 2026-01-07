@@ -1,0 +1,8 @@
+# Robots.txt for Fusion Family Medical Practice
+# https://www.fusionfamilymedicalpractice.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.fusionfamilymedicalpractice.com/sitemap.xml
